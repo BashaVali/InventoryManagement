@@ -35,5 +35,11 @@ namespace StockManagement
             stocks1.Price = Convert.ToInt32(Console.ReadLine());
             stocks.Add(stocks1);
         }
+        public void DeleteInventory(List<StockUtility.Stocks> stocks)
+        {
+            Console.WriteLine("Enter the stock name to be deleted: ");
+            string temp = Console.ReadLine();
+            stocks.Remove(stocks.Find(result => result.StockName.Equals(temp)));
+        }
     }
 }
