@@ -177,9 +177,61 @@ namespace InventoryDataManagement.InventoryManagement
             {
                 Console.WriteLine("Invalid Input");
             }
+
+        }
+        public void DeleteInventoryData()
+        {
+            Console.WriteLine("Enter the inventory whose data you want to delete");
+            string deleteinventory = Console.ReadLine();
+            if (deleteinventory.Equals("Rice"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string delrice = Console.ReadLine();
+                Inventory deldata = new Inventory();
+                foreach (var del in RiceList)
+                {
+                    if (del.Name.Equals(delrice))
+                    {
+                        deldata = del;
+                    }
+                }
+                RiceList.Remove(deldata);
+            }
+            else if (deleteinventory.Equals("Wheat"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string delwheat = Console.ReadLine();
+                Inventory deldata = new Inventory();
+                foreach (var del in WheatList)
+                {
+                    if (del.Name.Equals(delwheat))
+                    {
+                        deldata = del;
+                    }
+                }
+                WheatList.Remove(deldata);
+            }
+            else if (deleteinventory.Equals("Pulses"))
+            {
+                Console.WriteLine("Enter which data you want to delete");
+                string delpulses = Console.ReadLine();
+                Inventory deldata = new Inventory();
+                foreach (var del in PulsesList)
+                {
+                    if (del.Name.Equals(delpulses))
+                    {
+                        deldata = del;
+                    }
+                }
+                PulsesList.Remove(deldata);
+            }
+            else
+                Console.WriteLine("Invalid input");
+            Console.WriteLine("Inventory Data Deleted successfully");
         }
     }
 }
+
   
 
 

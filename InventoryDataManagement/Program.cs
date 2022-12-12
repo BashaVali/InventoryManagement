@@ -16,7 +16,7 @@ namespace InventoryDataManagement
                 while (flag)
                 {
                     
-                    Console.WriteLine("Select 1.InventoryDataManagement 2.InventoryManagement  3.AddInventoryData 4.EditInventoryData 5.Exit");
+                    Console.WriteLine("Select 1.InventoryDataManagement 2.InventoryManagement  3.AddInventoryData 4.EditInventoryData 5.DeleteInventoryData 6.Exit");
                     Console.Write("Enter your choice: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -34,8 +34,11 @@ namespace InventoryDataManagement
                                 break;
                             case 4:
                                 inventoryManager.EditInventoryData();
-                            break;
+                                break;
                             case 5:
+                                inventoryManager.DeleteInventoryData();
+                                break;
+                            case 6:
                                 flag = false;
                                 break;
                         } 
