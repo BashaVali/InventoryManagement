@@ -24,5 +24,16 @@ namespace StockManagement
             Console.WriteLine("Total store is : {0}", totalshare);
 
         }
+        public void AddStock(List<StockUtility.Stocks> stocks)
+        {
+            Stocks stocks1 = new Stocks();
+            Console.WriteLine("Enter the stock name: ");
+            stocks1.StockName = Console.ReadLine();
+            Console.WriteLine("Enter number of shares ");
+            stocks1.shares = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the stock price: ");
+            stocks1.Price = Convert.ToInt32(Console.ReadLine());
+            stocks.Add(stocks1);
+        }
     }
 }

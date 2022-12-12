@@ -26,7 +26,7 @@ namespace InventoryDataManagement
                 while (flag)
                 {
                     
-                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7.AddStock \n8.Exit");
+                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7 StockDataManagement \n8.AddStock \n9.Exit");
                     Console.Write("Enter your choice: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -52,10 +52,14 @@ namespace InventoryDataManagement
                                 inventoryManager.WriteToJsonFile(jsonDataFilePath);
                                 break;
                             case 7:
-                                 stockManager.DisplayStocks(fs);
+                                stockManager.DisplayStocks(fs);
                             break;
-                           
                             case 8:
+                            stockManager.AddStock(fs);
+                            stockManager.DisplayStocks(fs);
+                            break;
+
+                            case 9:
                                 flag = false;
                                 break;
                         } 
