@@ -229,6 +229,11 @@ namespace InventoryDataManagement.InventoryManagement
                 Console.WriteLine("Invalid input");
             Console.WriteLine("Inventory Data Deleted successfully");
         }
+        public void WriteToJsonFile(string file)
+        {
+            var json = JsonConvert.SerializeObject(inventories);
+            File.WriteAllText(file, json);
+        }
     }
 }
 
