@@ -52,7 +52,6 @@ namespace InventoryDataManagement
                                 inventoryManager.WriteToJsonFile(jsonDataFilePath);
                                 break;
                             case 7:
-                                 stockManager.AddStock(fs);
                                  stockManager.DisplayStocks(fs);
                             break;
                            
