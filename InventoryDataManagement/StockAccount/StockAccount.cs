@@ -69,6 +69,39 @@ namespace InventoryDataManagement.StockAccounts
             }
                    
         }
+        public void SellStock()
+        {
+            int count = 0;
+            Console.WriteLine("Enter Which stock you want to sell");
+            string sellStock = Console.ReadLine();
+            Console.WriteLine("Enter numbers of stock to sell");
+            int numstock = Convert.ToInt32(Console.ReadLine());
+            StockDetails delstock = new StockDetails();
+            foreach (var stocks in Customer.ToList())
+            {
+                if (stocks.Name.Equals(sellStock))
+                {
+                    if (stocks.NumberOfshares == numstock)
+                    {
+                        delstock = stocks;
+                        Customer.Remove(delstock);
+                    }
+                    else
+                    {
+                        stocks.NumberOfshares -= numstock;
+                    }
+                }
+            }
+            foreach (var data in Market.ToList())
+            {
+                if (data.Name.Equals(sellStock))
+                {
+                    count++;
+                    data.NumberOfshares += numstock;
+                }
+            }
+
+        }
         public void WriteToCustomerJsonfile(string file)
         {
             var customerjson = JsonConvert.SerializeObject(Customer);
