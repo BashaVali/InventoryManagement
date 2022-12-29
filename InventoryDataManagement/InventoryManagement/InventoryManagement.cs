@@ -14,7 +14,7 @@ namespace InventoryDataManagement.InventoryManagement
         List<Inventory> RiceList;
         List<Inventory> WheatList;
         List<Inventory> PulsesList;
-        InventoryData inventories;
+        InventoryData inventories; 
         public void ReadJSONFile(string file)
         {
             var json = File.ReadAllText(file);

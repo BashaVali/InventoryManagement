@@ -1,5 +1,6 @@
 ﻿using InventoryDataManagement.InventoryDataManagement;
 using InventoryDataManagement.InventoryManagement;
+using InventoryDataManagement.StockAccounts;
 using Newtonsoft.Json;
 using StockManagement;
 using System;
@@ -9,6 +10,8 @@ namespace InventoryDataManagement
     {
         static string jsonFilePath = @"C:\Users\Basha\Documents\DotNet\PracticePrograms\InventoryManagement\InventoryDataManagement\InventoryDataManagement\Inventory.json";
         static string jsonDataFilePath = @"C:\Users\Basha\Documents\DotNet\PracticePrograms\InventoryManagement\InventoryDataManagement\InventoryManagement\InventoryData.json";
+        static string customerPath = @"C:\Users\Basha\Documents\DotNet\PracticePrograms\InventoryManagement\InventoryDataManagement\StockAccount\Customer.json";
+        static string MarketPath = @"C:\Users\Basha\Documents\DotNet\PracticePrograms\InventoryManagement\InventoryDataManagement\StockAccount\Market.json";
         //getting path of json file 
         static void Main(string[] args)
         {
@@ -26,7 +29,7 @@ namespace InventoryDataManagement
                 while (flag)
                 {
                     
-                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7 StockDataManagement \n8.AddStock \n9.DeleteStock \n10.Exit");
+                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7 StockDataManagement \n8.AddStock \n9.DeleteStock \n10.StockAccount \n11.Exit");
                     Console.Write("Enter your choice: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -62,8 +65,13 @@ namespace InventoryDataManagement
                                 stockManager.DeleteInventory(fs);
                                 File.WriteAllText(file, JsonConvert.SerializeObject(stockUtility));
                                 stockManager.DisplayStocks(fs);
-                            break;
-                        case 10:
+                                break;
+                           case 10:
+                                StockAccount stockAccount = new StockAccount();
+                                stockAccount.ReadMarketStockFile(customerPath);
+                                stockAccount.ReadCustomerStockFile(MarketPath);
+                                break; 
+                           case 11:
                                 flag = false;
                                 break;
                     } 

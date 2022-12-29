@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Apple",
+    "NumberOfShares": 30,
+    "PricePerShare": 120
+  },
+  {
+    "Name": "Tata",
+    "NumberOfShares": 50,
+    "PricePerShare": 150
+  },
+  {
+    "Name": "Reliance",
+    "NumberOfShares": 100,
+    "PricePerShare": 720
+  }
+]
