@@ -13,5 +13,15 @@
     "Name": "Reliance",
     "NumberOfShares": 100,
     "PricePerShare": 720
+  },
+  {
+    "Name": "Myntra",
+    "NumberOfShares": 70,
+    "PricePerShare": 200
+  },
+  {
+    "Name": "SoulStrore",
+    "NumberOfShares": 120,
+    "PricePerShare": 550
   }
 ]

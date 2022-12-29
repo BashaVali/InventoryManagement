@@ -29,7 +29,7 @@ namespace InventoryDataManagement
                 while (flag)
                 {
                     
-                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7 StockDataManagement \n8.AddStock \n9.DeleteStock \n10.StockAccount \n11.Exit");
+                    Console.WriteLine("***Select Options:*** \n1.InventoryDataManagement \n2.InventoryManagement  \n3.AddInventoryData \n4.EditInventoryData \n5.DeleteInventoryData \n6.WriteToJsonFile \n7 StockDataManagement \n8.AddStock \n9.DeleteStock \n10.StockAccount \n11.BuyStock  \n12.JsonFiles \n13.Exit");
                     Console.Write("Enter your choice: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -70,8 +70,18 @@ namespace InventoryDataManagement
                                 StockAccount stockAccount = new StockAccount();
                                 stockAccount.ReadMarketStockFile(customerPath);
                                 stockAccount.ReadCustomerStockFile(MarketPath);
-                                break; 
+                                break;
                            case 11:
+                                StockAccount stock= new StockAccount();
+                                stock.BuyStock("Google");
+                                break;
+                           
+                           case 12:
+                               StockAccount account1 = new StockAccount();
+                               account1.WriteToMarketJsonfile(jsonDataFilePath);
+                               account1.WriteToCustomerJsonfile(jsonDataFilePath);
+                               break;
+                           case 13:
                                 flag = false;
                                 break;
                     } 

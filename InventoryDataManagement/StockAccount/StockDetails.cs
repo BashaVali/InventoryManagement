@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryDataManagement.StockAccounts
 {
-    internal class StockDetails
+     class StockDetails
     {
         public string Name { get; set; }
         public int NumberOfshares { get; set; }
